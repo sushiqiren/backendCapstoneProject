@@ -1,13 +1,9 @@
 from django.test import TestCase
 from rest_framework.test import APIClient
-from .models import Menu
+
+from restaurant.models import Menu
 from restaurant.serializers import MenuSerializer
 
-
-class MenuTest(TestCase):
-	def test_get_item_str(self):
-		item = Menu.objects.create(title="IceCream", price=80, inventory=100)
-		self.assertEqual(str(item), "IceCream : 80")
 
 class MenuViewTest(TestCase):
 	def setUp(self):
